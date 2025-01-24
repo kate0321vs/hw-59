@@ -8,7 +8,7 @@ interface Props {
 const Joke: React.FC<Props> = ({joke}) => {
 
   return (
-    <div>
+    <div className="py-4">
       {joke.type === 'single' ? <p>{joke.joke}</p> : null}
       {joke.type === 'twopart' ?
         <p>
