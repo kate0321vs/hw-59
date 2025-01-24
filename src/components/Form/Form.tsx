@@ -25,7 +25,7 @@ const Form: React.FC<Props> = ({onSubmitFormToAddFilm}) => {
   }
 
   return (
-    <form onSubmit={onSubmit} className="my-3 mx-3">
+    <form onSubmit={onSubmit}>
       <h4>Add new film</h4>
       <hr/>
       <div className="form-group">

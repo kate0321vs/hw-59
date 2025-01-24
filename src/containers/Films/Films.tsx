@@ -19,11 +19,18 @@ const Films = () => {
     );
   };
 
+  const DeleteFilm = (id: string) => {
+    setFilms(prevFilms =>
+      prevFilms.filter(film => film.id !== id
+      )
+    );
+  }
+
   return (
-    <>
+    <div className="card py-4 px-4">
       <Form onSubmitFormToAddFilm={AddFilms}/>
-      <FilmList films={films} editFilmName={editFilmName}/>
-    </>
+      <FilmList films={films} editFilmName={editFilmName} deleteItem={DeleteFilm}/>
+    </div>
   );
 };
 
