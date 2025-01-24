@@ -1,9 +1,9 @@
-import { Film, FilmMutation } from '../../types';
+import { IFilm, FilmMutation } from '../../types';
 import * as React from 'react';
 import { useState } from 'react';
 
 interface Props {
-  onSubmitFormToAddFilm: (film: Film) => void;
+  onSubmitFormToAddFilm: (film: IFilm) => void;
 }
 
 
@@ -21,6 +21,7 @@ const Form: React.FC<Props> = ({onSubmitFormToAddFilm}) => {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmitFormToAddFilm({id: String(new Date().toISOString()), ...form, name: form.name});
+    setForm({ name: '' });
   }
 
   console.log(form)
