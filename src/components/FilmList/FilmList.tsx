@@ -8,7 +8,6 @@ interface Props {
 
 const FilmList: React.FC<Props> = ({films, editFilmName}) => {
 
-  console.log(films);
   return (
     <>
       {films.length === 0 ? "No Added Films" :

@@ -24,8 +24,6 @@ const Form: React.FC<Props> = ({onSubmitFormToAddFilm}) => {
     setForm({ name: '' });
   }
 
-  console.log(form)
-
   return (
     <form onSubmit={onSubmit} className="my-3 mx-3">
       <h4>Add new film</h4>

@@ -1,10 +1,12 @@
+import React from 'react';
+
 interface Props {
   name: string;
   id: string;
   onInputChange: (id: string, name: string) => void;
 }
 
-const Film: React.FC<Props> = ({name, id, onInputChange}) => {
+const Film: React.FC<Props> = React.memo( ({name, id, onInputChange}) => {
 
   const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const {value} = e.target;
@@ -21,6 +23,7 @@ const Film: React.FC<Props> = ({name, id, onInputChange}) => {
       />
     </>
   );
-};
+}, (prevProps, nextProps) => {
+  return prevProps.name === nextProps.name});
 
 export default Film;
